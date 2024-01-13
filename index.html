@@ -33,7 +33,21 @@
             )
         }
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<Titulo/>)
+        function PaginaDeLogin() {
+            return (
+                <div className='container-login'>
+                    <img src='./img/imagem-login.png' alt="Uma mulher negra mexendo no computador e o logo da code conect"/>
+                    <section>
+                        <form action="">
+                            <Titulo/>
+                            <Subtitulo/>
+                        </form>
+                    </section>
+                </div>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<PaginaDeLogin/>)
 
     </script>
 
