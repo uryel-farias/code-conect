@@ -33,12 +33,12 @@
             )
         }
 
-        function CampoDeDigitacao(){    
+        function CampoDeDigitacao( {label, tipo, placeholder} ){    
             return (
                 <div className='form__campo-digitacao'>
-                    <label for="email">E-mail ou usuário</label>
-                        <input type="email"
-                                placeholder='Digite seu e-mail ou usuário'
+                    <label for="email">{label}</label>
+                        <input type={tipo}
+                                placeholder={placeholder}
                                 required
                                 id='email'/>
                 </div>
@@ -62,15 +62,16 @@
                         <form action="">
                             <Titulo/>
                             <Subtitulo/>
-                            <CampoDeDigitacao/>
-
-                            <div className='form__campo-digitacao'>
-                                <label for="senha">Senha</label>
-                                <input type="password"
-                                        placeholder='Digite sua senha'
-                                        required
-                                        id='senha'/>
-                            </div>
+                            <CampoDeDigitacao 
+                                label='E-mail ou usuário'
+                                type='email'
+                                placeholder='Digite seu email ou usuário'
+                            />
+                            <CampoDeDigitacao
+                                label='Senha'
+                                tipo='password'
+                                placeholder='Digite sua senha'
+                            />
                             <Botao/>
 
                         </form>
