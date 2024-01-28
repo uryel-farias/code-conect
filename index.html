@@ -33,14 +33,16 @@
             )
         }
 
-        function CampoDeDigitacao( {label, tipo, placeholder} ){    
+        function CampoDeDigitacao( {label, tipo, placeholder, value, setValor } ){    
             return (
                 <div className='form__campo-digitacao'>
                     <label for="email">{label}</label>
                         <input type={tipo}
                                 placeholder={placeholder}
                                 required
-                                id='email'/>
+                                id='email'
+                                value= {value}
+                                onChange={(evento) => setValor(evento.target.value)}/>
                 </div>
             )
         }
@@ -55,6 +57,13 @@
         }
 
         function PaginaDeLogin() {
+
+            let email = 'moni@teste.com'
+            function substituiValorDoCampo (novoValor) {
+                email = novoValor;
+                console.log(email)
+            }
+
             return (
                 <div className='container-login'>
                     <img src='./img/imagem-login.png' alt="Uma mulher negra mexendo no computador e o logo da code conect"/>
@@ -66,6 +75,8 @@
                                 label='E-mail ou usuário'
                                 type='email'
                                 placeholder='Digite seu email ou usuário'
+                                value= {email}
+                                setValor={substituiValorDoCampo}
                             />
                             <CampoDeDigitacao
                                 label='Senha'
