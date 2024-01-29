@@ -68,6 +68,25 @@
             )
         }
 
+        function Texto({ classe, children }) {
+            return (
+            <p className={classe}>
+                {children}
+            </p>
+            )
+        }
+
+        function ItensRedesSociais({ link, nome}) {
+            return (
+                <li>
+                    <a href={link}>
+                        <img src={`./img/${nome}.svg`} alt={`icone do ${nome}`}/>
+                        {nome}
+                    </a>
+                </li>
+            )
+        }
+
         function PaginaDeLogin() {
 
             const [email, setEmail] = React.useState('');
