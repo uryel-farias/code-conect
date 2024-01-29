@@ -56,6 +56,18 @@
             )
         }
 
+        function CheckBox(){
+            return (
+                <>
+                    <div className='form__campo-checkbox'>
+                        <input type="checkBox" id="lembrar"/>
+                        <label for="lembrar"></label>
+                    </div>
+                    <p className='form__opcoes-texto'>Lembrar-me</p>
+                </>
+            )
+        }
+
         function PaginaDeLogin() {
 
             const [email, setEmail] = React.useState('');
@@ -89,6 +101,7 @@
                                 setValor={setSenha}
                                 
                             />
+                            <CheckBox/>
                             <Botao>Login</Botao>
 
                         </form>
