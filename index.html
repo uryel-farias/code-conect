@@ -87,6 +87,14 @@
             )
         }
 
+        function Link ({ children }) {
+            return (
+                <a href='#' className='container-Links__links'>
+                    {children}
+                </a>
+            )
+        }
+
         function PaginaDeLogin() {
 
             const [email, setEmail] = React.useState('');
@@ -127,6 +135,18 @@
                             <Botao>Login</Botao>
 
                         </form>
+
+                        <div className='container-links'>
+                            <Texto classe='container-links__titulo'>
+                                ou entre com outras contas
+                            </Texto>
+                            <ul>
+                                <ItensRedesSociais Link='https://www.github.com' nome='GitHub'/>
+                                <ItensRedesSociais Link='https://www.google.com' nome='Google'/>
+                            </ul>
+                            <Texto classe='container-links__texto'>Ainda não tem conta?</Texto>
+                            <Link>Crie seu Cadastro!</Link>
+                        </div>    
                     </section>
                 </div>
             )
